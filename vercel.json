@@ -1,13 +1,5 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "nodeVersion": "20.x"
 } 
