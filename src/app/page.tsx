@@ -74,7 +74,7 @@ export default function Home() {
       <p>
         Hey, I&apos;m Kyle. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
         I&apos;m a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
-        I&apos;m my free time, I enjoy going to the gym, laying in the sun, and listening to house music.
+        In my free time, I enjoy going to the gym, laying in the sun, and listening to house music.
       </p>
 
       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
