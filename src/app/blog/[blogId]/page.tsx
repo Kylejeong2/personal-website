@@ -23,8 +23,8 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { blogId: string } }) {
-  const { blogId } = params;
+export default async function BlogPost({ params }: { params: Promise<{ blogId: string }> }) {
+  const { blogId } = await params;
   const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
   const fullPath = path.join(postsDirectory, `${blogId}.md`);
   

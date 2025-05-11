@@ -4,7 +4,7 @@ import { getRecentBlogPosts } from '@/utils/blog';
 
 export default function Home() {
   const recentPosts = getRecentBlogPosts();
-  console.log('Blog posts:', recentPosts); // Debug log
+  // console.log('Blog posts:', recentPosts); // Debug log
   
   return (
     <div style={{ maxWidth: "650px", margin: "0 auto", padding: "20px", position: "relative" }}>
@@ -72,9 +72,9 @@ export default function Home() {
 
       <h2 id="about">About</h2>
       <p>
-        Hey, I'm Kyle. I am 20 years old and I'm currently in LA (for school), but will be in SF this summer. 
-        I'm a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
-        I'm my free time, I enjoy going to the gym, laying in the sun, and listening to house music.
+        Hey, I&apos;m Kyle. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
+        I&apos;m a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
+        I&apos;m my free time, I enjoy going to the gym, laying in the sun, and listening to house music.
       </p>
 
       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
@@ -86,9 +86,11 @@ export default function Home() {
           boxShadow: "0 1px 3px rgba(0,0,0,0.12)", 
           overflowX: "auto" 
         }}>
-          <img 
+          <Image 
             src="https://ghchart.rshah.org/Kylejeong2" 
             alt="Kyle Jeong's GitHub Contributions" 
+            width={800}
+            height={150}
             style={{ width: "100%", height: "auto" }}
           />
         </div>
@@ -185,7 +187,7 @@ export default function Home() {
 
       <h2 id="blog">Blog</h2>
       <p>
-        Check out my <a href="/blog">blog</a> where I write about tech, projects, and other topics.
+        Check out my <Link href="/blog">blog</Link> where I write about tech, projects, and other topics.
       </p>
       
       {recentPosts && recentPosts.length > 0 && (
@@ -212,9 +214,6 @@ export default function Home() {
       <hr />
 
       <p>© {new Date().getFullYear()} Kyle Jeong</p>
-      
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script noModule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
   );
 }

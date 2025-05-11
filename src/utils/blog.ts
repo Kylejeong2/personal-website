@@ -5,7 +5,7 @@ export function getRecentBlogPosts(count = 3) {
     const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
     
     if (!fs.existsSync(postsDirectory)) {
-      console.log('Blog posts directory does not exist:', postsDirectory);
+      console.error('Blog posts directory does not exist:', postsDirectory);
       return [];
     }
     
@@ -66,7 +66,7 @@ export function getRecentBlogPosts(count = 3) {
               const titleMatch = frontmatter.match(/title:\s*['"]?(.*?)['"]?(\n|$)/m);
               if (titleMatch && titleMatch[1]) {
                 title = titleMatch[1].trim();
-                console.log(`Found title in frontmatter for ${id}:`, title);
+                // console.log(`Found title in frontmatter for ${id}:`, title);
               }
             }
             
@@ -75,14 +75,14 @@ export function getRecentBlogPosts(count = 3) {
               const h1Match = fileContents.match(/^#\s+(.*?)(\n|$)/m);
               if (h1Match && h1Match[1]) {
                 title = h1Match[1].trim();
-                console.log(`Found title in H1 for ${id}:`, title);
+                // console.log(`Found title in H1 for ${id}:`, title);
               }
             }
             
             // Fall back to file name if no title found
             if (!title) {
               title = id.replace(/-/g, ' ');
-              console.log(`Using filename as title for ${id}:`, title);
+              // console.log(`Using filename as title for ${id}:`, title);
             }
             
             // Extract content after frontmatter
