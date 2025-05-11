@@ -100,6 +100,40 @@ ul {
   color: var(--twitter);
 }
 
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-menu a:not(:last-child)::after {
+  content: '|';
+  margin-left: 10px;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    margin: 5px 0;
+  }
+  
+  .nav-menu a:not(:last-child)::after {
+    display: none;
+  }
+}
+
 /* Project Section Styles */
 .project-list {
   display: grid;

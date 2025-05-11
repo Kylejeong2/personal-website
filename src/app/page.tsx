@@ -60,13 +60,13 @@ export default function Home() {
         </a>
       </p>
       
-      <p>
-        <a href="#about">About</a> &nbsp;|&nbsp; 
-        <a href="#experience">Experience</a> &nbsp;|&nbsp; 
-        <a href="#projects">Projects</a> &nbsp;|&nbsp; 
-        <a href="#blog">Blog</a> &nbsp;|&nbsp; 
+      <nav className="nav-menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
-      </p>
+      </nav>
 
       <hr />
 
