@@ -74,7 +74,7 @@ export default function Home() {
       <p>
         Hey, I&apos;m Kyle. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
         I&apos;m a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
-        In my free time, I enjoy going to the gym, laying in the sun, and listening to house music.
+        In my free time, I enjoy going to the gym and listening to house music.
       </p>
 
       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
@@ -121,13 +121,27 @@ export default function Home() {
       </p>
 
       <p>
-        <b>Software Engineer Intern</b>, <a href="https://lookbk.com" target="_blank" rel="noopener noreferrer">Lookbk</a><br />
+        <b>Software Engineer</b>, <a href="https://lookbk.com" target="_blank" rel="noopener noreferrer">Lookbk</a><br />
         Fall 2024<br />
         Building Shazam for clothes.
       </p>
 
       <h2 id="projects">Projects</h2>
       <ul className="project-list">
+        <li className="project-item active" data-filter-item>
+          <a href="https://github.com/Kylejeong2/graham" target="_blank">
+            <h3 className="project-title">graham</h3>
+            <p className="project-category">a phone agents for SMBs (failed)</p>
+          </a>
+        </li>
+
+        <li className="project-item active" data-filter-item>
+          <a href="https://github.com/Kylejeong2/ai-sdr" target="_blank">
+            <h3 className="project-title">ai sdr</h3>
+            <p className="project-category">automate inbound lead validation (unfinished)</p>
+          </a>
+        </li>
+
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/UCLA-Wildfires" target="_blank">
             <h3 className="project-title">Westwood Wildfires</h3>
