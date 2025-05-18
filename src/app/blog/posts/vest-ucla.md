@@ -3,6 +3,8 @@ title: "why i started vest at ucla (the manifesto)"
 date: "2024-12-15"
 ---
 
+This is the passive-aggressive manifesto i wrote when starting a startup club at UCLA, think i was cooking here. 
+
 California is home to a whopping 41 of the top 100 universities in the nation. At the top, Stanford and Berkeley have produced a combined 51 tech billionaires. UCLA has only 1 (shoutout Greg Michelson).
 
 <br/>

@@ -21,7 +21,10 @@ It took a toll on our opportunities as a club (not as cracked so we didn't get a
 
 <br/>
 
-I'd say it was tough, but definitely a great learning experience for me. Somethings I MUST get better at in order to be successful at a point (in starting my own company) is learning how to fire fast. In order to keep a culture, we need to set it early and right. People that weren't putting in the same work or effort shouldn't get the benefits. Getting rid of people who weren't a good fit fast is crucial to the survival of an org (just like a startup).
+I'd say it was tough, but definitely a great learning experience for me. Something I gotta get better at is learning how to fire fast. 
+In order to keep a culture, we need to set it early and right. People that weren't putting in the same work or effort shouldn't get the benefits. 
+
+Getting rid of people who weren't a good fit fast is crucial to the survival of an org. 
 
 <br/>
 
@@ -29,15 +32,4 @@ Another thing is I needed to vet candidates harder. Interviews are all talk, you
 
 <br/>
 
-someone told me that PROD would interview candidates based off of how much they could build of an idea in a week, rather than just take their word for it. Actions speak louder than words.
-
-<br/>
-
 overall running VEST has been a super cool experience that I think is teaching me a lot + will continue to teach me even more about managing people and being a better leader.
-
-<br/>
-
-so basically:
-- don't grow too fast and take people you don't NEED
-- recruit much better
-- remove people fast
