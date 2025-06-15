@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export function getRecentBlogPosts(count = 3) {
+export function getRecentBlogPosts() {
     const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
     
     if (!fs.existsSync(postsDirectory)) {
@@ -138,8 +138,7 @@ export function getRecentBlogPosts(count = 3) {
       
       // Sort by date, newest first
       return posts
-        .sort((a, b) => (a.date > b.date ? -1 : 1))
-        .slice(0, count);
+        .sort((a, b) => (a.date > b.date ? -1 : 1));
     } catch (err) {
       console.error('Error getting blog posts:', err);
       return [];
