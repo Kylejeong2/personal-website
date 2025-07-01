@@ -128,6 +128,20 @@ export default function Home() {
 
       <h2 id="projects">Projects</h2>
       <ul className="project-list">
+      <li className="project-item active" data-filter-item>
+          <a href="https://github.com/browserbase/mcp-server-browserbase" target="_blank">
+            <h3 className="project-title">Browserbase MCP Server</h3>
+            <p className="project-category">Main contributor, 2.1k Github Stars, 50k+ Downloads</p>
+          </a>
+        </li>
+
+        <li className="project-item active" data-filter-item>
+          <a href="https://github.com/browserbase/stagehand" target="_blank">
+            <h3 className="project-title">Stagehand</h3>
+            <p className="project-category">Automate the web with natural language, 13k Github Stars (working on contributing more)</p>
+          </a>
+        </li>
+
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/graham" target="_blank">
             <h3 className="project-title">graham</h3>
@@ -157,40 +171,12 @@ export default function Home() {
         </li>
 
         <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Twitter-CLI" target="_blank">
-            <h3 className="project-title">Twitter-CLI</h3>
-            <p className="project-category">Post on X from the CLI</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/Talk-to-Overlap" target="_blank">
             <h3 className="project-title">Talk to Podcasts</h3>
             <p className="project-category">Realtime API to talk to Podcasts</p>
           </a>
         </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/LinearAlgebraGPT" target="_blank">
-            <h3 className="project-title">Linear Algebra GPT</h3>
-            <p className="project-category">RAG on my Linear Algebra Textbooks</p>
-          </a>
-        </li>
         
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Compadre" target="_blank">
-            <h3 className="project-title">Compadre</h3>
-            <p className="project-category">AI Friend/Companion</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Call-Agent" target="_blank">
-            <h3 className="project-title">Call-Agents</h3>
-            <p className="project-category">Directory of AI Call Agents I built</p>
-          </a>
-        </li>
-
         <li className="project-item active" data-filter-item>
           <a href="https://hackletter.co" target="_blank">
             <h3 className="project-title">Hackletter</h3>
