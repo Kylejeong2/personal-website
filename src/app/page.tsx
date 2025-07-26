@@ -103,13 +103,18 @@ export default function Home() {
         Giving AI agents a browser.
       </p>
       <p>
+        <b>Engineering Fellow</b>, <a href="https://browserbase.com" target="_blank" rel="noopener noreferrer">Kleiner Perkins</a><br />
+        June 2025 - Present<br />
+        KP fellow
+      </p>
+      <p>
         <b>Growth</b>, <a href="https://excessive-pound-7e1.notion.site/Nexus-116f0e56bcf380098f71e857ab5e0f2b?pvs=74" target="_blank" rel="noopener noreferrer">Nexus</a><br />
         2025<br />
         Writing the newsletter, helping connect builders, and scaling startup culture in Socal. Backed by Soma Capital, Pear VC, the 1517 Fund, + more.
       </p>
 
       <p>
-        <b>Software Engineer</b>, <a href="https://tryfoundation.ai" target="_blank" rel="noopener noreferrer">Foundation</a><br />
+        <b>Software Engineer</b>, <a href="https://withpace.com" target="_blank" rel="noopener noreferrer">Pace</a><br />
         Jan-Mar 2025<br />
         Building multi-purpose web agents for insurance companies.
       </p>
@@ -128,73 +133,49 @@ export default function Home() {
 
       <h2 id="projects">Projects</h2>
       <ul className="project-list">
+      <li className="project-item active" data-filter-item>
+          <a href="https://github.com/Kylejeong2/mcpvals" target="_blank">
+            <h3 className="project-title">Mcpvals</h3>
+            <p className="project-category">Evaluation library for MCP servers</p>
+          </a>
+        </li>
+      <li className="project-item active" data-filter-item>
+          <a href="https://salesbench.dev" target="_blank">
+            <h3 className="project-title">Salesbench</h3>
+            <p className="project-category">Benchmarking foundation models on their ability to sell life insurance</p>
+          </a>
+        </li>
+      
+      <li className="project-item active" data-filter-item>
+          <a href="https://github.com/browserbase/mcp-server-browserbase" target="_blank">
+            <h3 className="project-title">Browserbase MCP Server</h3>
+            <p className="project-category">Main contributor, 2.1k Github Stars, 50k+ Downloads</p>
+          </a>
+        </li>
+
+        <li className="project-item active" data-filter-item>
+          <a href="https://github.com/browserbase/stagehand" target="_blank">
+            <h3 className="project-title">Stagehand</h3>
+            <p className="project-category">Automate the web with natural language, 13k Github Stars (working on contributing more)</p>
+          </a>
+        </li>
+
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/graham" target="_blank">
             <h3 className="project-title">graham</h3>
-            <p className="project-category">a phone agents for SMBs (failed)</p>
+            <p className="project-category">a phone agents for SMBs</p>
           </a>
         </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/ai-sdr" target="_blank">
-            <h3 className="project-title">ai sdr</h3>
-            <p className="project-category">automate inbound lead validation (unfinished)</p>
-          </a>
-        </li>
-
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/UCLA-Wildfires" target="_blank">
             <h3 className="project-title">Westwood Wildfires</h3>
             <p className="project-category">Realtime Dashboard to see LA Wildfires</p>
           </a>
         </li>
-
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/Github-Wrapped" target="_blank">
             <h3 className="project-title">Github Wrapped</h3>
             <p className="project-category">See your year on github</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Twitter-CLI" target="_blank">
-            <h3 className="project-title">Twitter-CLI</h3>
-            <p className="project-category">Post on X from the CLI</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Talk-to-Overlap" target="_blank">
-            <h3 className="project-title">Talk to Podcasts</h3>
-            <p className="project-category">Realtime API to talk to Podcasts</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/LinearAlgebraGPT" target="_blank">
-            <h3 className="project-title">Linear Algebra GPT</h3>
-            <p className="project-category">RAG on my Linear Algebra Textbooks</p>
-          </a>
-        </li>
-        
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Compadre" target="_blank">
-            <h3 className="project-title">Compadre</h3>
-            <p className="project-category">AI Friend/Companion</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://github.com/Kylejeong2/Call-Agent" target="_blank">
-            <h3 className="project-title">Call-Agents</h3>
-            <p className="project-category">Directory of AI Call Agents I built</p>
-          </a>
-        </li>
-
-        <li className="project-item active" data-filter-item>
-          <a href="https://hackletter.co" target="_blank">
-            <h3 className="project-title">Hackletter</h3>
-            <p className="project-category">Hackernews summarized in a newsletter - 200 DAU</p>
           </a>
         </li>
       </ul>
