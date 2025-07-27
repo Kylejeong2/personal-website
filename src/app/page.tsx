@@ -142,7 +142,7 @@ export default function Home() {
       <li className="project-item active" data-filter-item>
           <a href="https://salesbench.dev" target="_blank">
             <h3 className="project-title">Salesbench</h3>
-            <p className="project-category">Benchmarking foundation models on their ability to sell life insurance</p>
+            <p className="project-category">Benchmarking foundation models on their ability to sell insurance</p>
           </a>
         </li>
       
@@ -156,13 +156,13 @@ export default function Home() {
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/browserbase/stagehand" target="_blank">
             <h3 className="project-title">Stagehand</h3>
-            <p className="project-category">Automate the web with natural language, 13k Github Stars (working on contributing more)</p>
+            <p className="project-category">Automate the web with natural language, 15k Github Stars</p>
           </a>
         </li>
 
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/graham" target="_blank">
-            <h3 className="project-title">graham</h3>
+            <h3 className="project-title">Graham</h3>
             <p className="project-category">a phone agents for SMBs</p>
           </a>
         </li>
