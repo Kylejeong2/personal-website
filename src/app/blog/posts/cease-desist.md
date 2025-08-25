@@ -5,20 +5,21 @@ date: "2025-01-15"
 
 ---
 
-The LA wildfires in early 2025 were crazy.
+The LA wildfires in early 2025 were a crazy tragedy. People were losing the houses they grew up in, and rampant wildfires took over the news. For me, I'd just started winter quarter at UCLA, which was already super hectic. Early morning classes, trying to catch up with friends, and I was trying to get VEST (my startup club) off the ground. 
 
-We had just started winter quarter at UCLA, which was already hectic as I was trying to get VEST (my startup/builder club) off the ground. We were running events every other day and meeting tons of new people. 
+We were running events every other day and meeting tons of new people that wanted to join. There probably could not have been a crazier start to my year. 
+
 <br/>
 
-### Impact on Campus
+I had a feeling that the fires were going to get to us. The air was getting smoggier and I noticed AQI was hundreds above the healthy amount. My roommates and I listened to the news at night and saw the night sky burn a bright red from the fires. 
 
-With the fires approaching, UCLA switched to online classes and I drove back to the Bay Area. This disrupted our event planning and halted recruitment, as everyone left campus.
+It didn't take long for UCLA to switch to online classes and I decided to drive back to the Bay Area to stay extra safe.
 
 <br/>
 
 ### The Problem
 
-Tracking the fires was a mess. You needed to check:
+Tracking the fires was a mess. If you wanted to know if we were going to be safe, you needed to check:
 
 - **Multiple sources for AQI data**
     - PurpleAir sensors
@@ -49,7 +50,7 @@ Speed was the priority over perfect code - I just needed to ship something usefu
 
 <br/>
 
-### Launch & Reception
+### Launch
 
 Launching on Monday (1/13) across multiple platforms, the site gained significant traction:
 
@@ -67,33 +68,33 @@ An hour after launch though something crazy happened. The digital media coordina
 
 <br />
 
-I was using UCLA but not the exact logo so wasn't sure if that was okay. I responded asking if I could keep it up using a different name and they agreed. So I moved UCLA to Westwood and continued to grow the site.
+I was using technically using UCLA but not the exact logo so wasn't sure if that was okay. I responded asking if I could keep it up using a different name and they agreed. So I moved UCLA to Westwood (the area around the school) and continued to grow the site, pushing it on twitter, reddit, wherever I could think. 
+
+The site actually went down halfway through the day from load and I remember pushing a fix while sitting in south park with some friends.  
+
+One of the coolest moments that day was when a friend reached out and asked if I was the one behind the site. Her friend sent it to their groupchat to help them track what was going on and it's super cool that it spread full circle. 
 
 By the end of the day I scaled to 1.3M requests and 40k users. That was insane. Real people were using my product and liking it. If I was able to help even one person, I was happy.
 
 <br/>
 
-### The Side Effects
+#### Side Effects
 
-In the 24hrs of this project I received:
-
-- **4 random six-figure job offers** - from companies impressed by what i built
-- **5 VC meetings** - interested in what I might build next (can't say no to free dinner)
-- **Daily Bruin interview request** - wanting to feature the whole story
-- **Tons of Alumni network connections** - many reaching out to help
+Alongside the very "nice" letter from UCLA, many people reached out and wanted to help in any way they could: promoting the app, sending money to pay for hosting costs, etc.
+For something I built with so little effort you'd be surprised at how many people wanted to hire me from this.
 
 <br/>
 
 ### The Moral
 
-The moral of the story is: just build things. Who cares what people say or think? It won't matter if no one sees your project. Build a small version and just ship it.
+The moral of the story is: you can just do things. Who cares what people say or think? It won't matter if no one sees your project. Build a working version and just ship it.
 
 If I didn't push out the first version so fast, someone else would have beat me to it. I didn't care about the details (and using UCLA's name lol) and just put it in front of people's eyeballs. I received a lot of feedback and made changes accordingly as well as optimizations to save money.
 
-*(shoutout upstash for giving me free credits for the cache!)*
+*(shoutout upstash for giving me free credits)*
 
 <br/>
 
 ### The End
 
-You can just do things. If you're a student at UCLA, apply to VEST.
+If you're currently a student at UCLA, apply to VEST.
