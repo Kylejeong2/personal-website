@@ -1,30 +1,32 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getRecentBlogPosts } from '@/utils/blog';
 
 export default function Home() {
-  const recentPosts = getRecentBlogPosts();
-  // console.log('Blog posts:', recentPosts); // Debug log
   
   return (
     <div style={{ maxWidth: "650px", margin: "0 auto", padding: "20px", position: "relative" }}>
-      <div style={{ position: "absolute", top: "20px", right: "20px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "20px" }}>
+        <div>
+          <h1 style={{ margin: 0 }}>Kyle Jeong</h1>
+          <p style={{ margin: "5px 0 0 0" }}>Engineer | Founder | Student</p>
+        </div>
         <div style={{ 
-          width: "80px", 
-          height: "80px", 
-          backgroundColor: "white",
+          width: "100px",
+          height: "100px",
+          backgroundColor: "white", 
           padding: "4px",
           borderRadius: "5px",
           boxShadow: "0 1px 3px rgba(0,0,0,0.12)",
-          overflow: "hidden"
+          overflow: "hidden",
+          marginLeft: "auto"
         }}>
           <Image 
-            src="/pictures/Headshot.png" 
-            alt="Kyle Jeong's headshot" 
-            width={72} 
-            height={72} 
-            style={{ 
-              borderRadius: "3px",
+            src="/pictures/Headshot.png"
+            alt="Kyle Jeong's headshot"
+            width={72}
+            height={72}
+            style={{
+              borderRadius: "3px", 
               objectFit: "cover",
               width: "100%",
               height: "100%"
@@ -32,10 +34,6 @@ export default function Home() {
           />
         </div>
       </div>
-
-      <h1>Kyle Jeong</h1>
-      <p>Engineer | Founder | Student</p>
-      
       <p className="social-links">
         <a href="https://github.com/Kylejeong2" target="_blank" rel="noopener noreferrer" title="GitHub">
           <span>
@@ -60,21 +58,13 @@ export default function Home() {
         </a>
       </p>
       
-      <nav className="nav-menu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <hr />
+      {/* Global nav now in layout */}
 
       <h2 id="about">About</h2>
       <p>
-        Hey, I&apos;m Kyle. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
+        Hey, I&apos;m <strong>Kyle</strong>. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
         I&apos;m a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
-        In my free time, I enjoy going to the gym and listening to house music.
+        <br /> <br /> In my free time, I enjoy going to the gym, trying to learn magic tricks, and listening to house music.
       </p>
 
       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
@@ -125,12 +115,6 @@ export default function Home() {
         Building the startup/builder community for UCLA.
       </p>
 
-      <p>
-        <b>Software Engineer</b>, <a href="https://lookbk.com" target="_blank" rel="noopener noreferrer">Lookbk</a><br />
-        Fall 2024<br />
-        Building Shazam for clothes.
-      </p>
-
       <h2 id="projects">Projects</h2>
       <ul className="project-list">
       <li className="project-item active" data-filter-item>
@@ -163,7 +147,7 @@ export default function Home() {
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/Kylejeong2/graham" target="_blank">
             <h3 className="project-title">Graham</h3>
-            <p className="project-category">a phone agents for SMBs</p>
+            <p className="project-category">phone agents for SMBs</p>
           </a>
         </li>
         <li className="project-item active" data-filter-item>
@@ -180,24 +164,42 @@ export default function Home() {
         </li>
       </ul>
 
+      <hr />
+
+      <h2 id="cool">Cool Things I've Done</h2>
+      <ul>
+        <li>• Built a <a href="https://westwoodfires.org/" target="_blank" rel="noopener noreferrer">website</a> to track the LA wildfires, 40k users in a day</li>
+        <li>• Wrestled NCAA D2 my freshman year of <a href="https://sfstategators.com/sports/wrestling/roster/kyle-jeong/5144" target="_blank" rel="noopener noreferrer">college</a></li>
+        <li>• Founded the premier builder community at UCLA via <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">VEST</a> (100+ members)</li>
+      </ul>
+
+      <hr />
+
+      <h2 id="now">What I'm Working On</h2>
+      <ul>
+        <li>• Building the future of Web/Browser automation at <a href="https://browserbase.com" target="_blank" rel="noopener noreferrer">Browserbase</a></li>
+        <li>• Building a community of builders at UCLA <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">(VEST)</a></li>
+        <li>• Building a better eval library for <a href="https://github.com/Kylejeong2/mcpvals" target="_blank" rel="noopener noreferrer">MCP servers</a></li>
+        <li>• Getting better at writing and storytelling, feel free to email me feedback on my <Link href="/blog">blog</Link></li>
+      </ul>
+
+      <hr />
+
+      {/* <h2 id="interests">What I'm Interested In</h2>
+      <ul>
+        <li></li>
+      </ul> */}
+
+      {/* <h2 id="resume">Tools I like</h2>
+      <p>
+      </p> */}
+
       <h2 id="blog">Blog</h2>
       <p>
-        Check out my <Link href="/blog">blog</Link> where I write about tech, projects, and other topics.
+        Check out my <Link href="/blog">blog</Link> where I write about new technologies, my experiences, technical projects, and other topics.
       </p>
-      
-      {recentPosts && recentPosts.length > 0 && (
-        <ul className="project-list">
-          {recentPosts.map(post => (
-            <li key={post.id} className="project-item active" data-filter-item>
-              <Link href={`/blog/${post.id}`}>
-                <h3 className="project-title">{post.title || 'Untitled Post'}</h3>
-                <p className="project-category">{post.formattedDate}</p>
-                <p className="project-excerpt">{post.excerpt}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+
+      <hr />
 
       <h2 id="contact">Contact</h2>
       <p>

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import readingTime from 'reading-time';
 
 export function getRecentBlogPosts() {
     const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
@@ -117,12 +118,15 @@ export function getRecentBlogPosts() {
               excerpt = excerpt.substring(0, 147) + '...';
             }
             
+            const read = readingTime(content);
+            
             return {
               id,
               title,
               excerpt,
               date,
-              formattedDate
+              formattedDate,
+              readingTimeText: read.text
             };
           } catch (err) {
             console.error(`Error processing blog post ${fileName}:`, err);

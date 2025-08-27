@@ -233,6 +233,67 @@ article code {
   font-family: monospace;
 }
 
+/* Highlight.js theme (github-like minimal) */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.75rem;
+  background: #f6f8fa;
+  color: #24292e;
+  border: 1px solid #e1e4e8;
+}
+.hljs-comment,
+.hljs-quote { color: #6a737d; font-style: italic; }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst { color: #d73a49; }
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr { color: #005cc5; }
+.hljs-string,
+.hljs-doctag { color: #032f62; }
+.hljs-title,
+.hljs-section { color: #6f42c1; }
+.hljs-attribute,
+.hljs-name { color: #22863a; }
+.hljs-type,
+.hljs-class .hljs-title { color: #e36209; }
+.hljs-tag,
+.hljs-regexp,
+.hljs-symbol,
+.hljs-bullet { color: #e36209; }
+.hljs-built_in,
+.hljs-builtin-name { color: #005cc5; }
+.hljs-meta { color: #6a737d; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
+
+/* Blockquotes */
+article blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ccc;
+  background: #fafafa;
+}
+
+/* Table of contents */
+.toc {
+  border: 1px dashed #bbb;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  background: #fafafa;
+}
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+.toc li { margin: 4px 0; }
+.toc li.depth-2 { padding-left: 8px; }
+.toc li.depth-3 { padding-left: 16px; }
+
 article a {
   text-decoration: underline;
 }

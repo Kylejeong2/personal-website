@@ -2,13 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import hljs from 'highlight.js';
+import sanitizeHtml from 'sanitize-html';
+import readingTime from 'reading-time';
 import { marked } from 'marked';
+import GithubSlugger from 'github-slugger';
 
-// Configure marked options
+// Configure marked
 marked.setOptions({
-  gfm: true,        // GitHub Flavored Markdown
-  breaks: true,     // Convert \n to <br>
-  pedantic: false,  // Don't be too strict with markdown spec
+  gfm: true,
+  breaks: true,
+  pedantic: false
 });
 
 export function generateStaticParams() {
@@ -88,9 +92,61 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
     
     formattedDate = `${months[month - 1]} ${day}, ${year}`;
   }
+
+  // Build TOC from headings manually
+  const headings: { depth: number, text: string, id: string }[] = [];
+  const slugger = new GithubSlugger();
   
-  // Convert markdown to HTML using marked
-  const htmlContent = marked(content);
+  // Extract headings with regex
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm;
+  let match;
+  while ((match = headingRegex.exec(content)) !== null) {
+    const depth = match[1].length;
+    const text = match[2].trim();
+    const id = slugger.slug(text);
+    
+    if (depth <= 3) { // Only include h1-h3 in TOC
+      headings.push({ depth, text, id });
+    }
+  }
+
+  // Reading time
+  const read = readingTime(content);
+
+  // Process content - add IDs to headings
+  let processedContent = content.replace(headingRegex, (match, hashes, title) => {
+    const id = slugger.slug(title.trim());
+    return `${hashes} <a id="${id}"></a>${title}`;
+  });
+
+  // Add syntax highlighting with highlight.js
+  processedContent = processedContent.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
+    const language = lang || 'plaintext';
+    const validLang = hljs.getLanguage(language) ? language : 'plaintext';
+    const highlighted = hljs.highlight(code, { language: validLang }).value;
+    return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>`;
+  });
+
+  // Convert markdown to HTML
+  const rawHtml = marked(processedContent) as string;
+  
+  // Sanitize HTML
+  const htmlContent = sanitizeHtml(rawHtml, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+      'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'code', 'span', 'kbd', 'table', 'thead', 'tbody', 'tr', 'th', 'td'
+    ]),
+    allowedAttributes: {
+      '*': ['id', 'class'],
+      a: ['href', 'name', 'target', 'rel', 'id'],
+      img: ['src', 'alt', 'title', 'width', 'height', 'loading'],
+      code: ['class'],
+      span: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    transformTags: {
+      a: sanitizeHtml.simpleTransform('a', { rel: 'noopener noreferrer' }, true),
+    },
+  });
   
   return (
     <div style={{ maxWidth: "650px", margin: "0 auto", padding: "20px" }}>
@@ -98,11 +154,23 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
         <Link href="/">← Back to home</Link> | <Link href="/blog">All posts</Link>
       </p>
       <h1>{title}</h1>
-      <p className="post-date">{formattedDate}</p>
+      <p className="post-date">{formattedDate} · {read.text}</p>
+      {headings.length > 1 && (
+        <nav className="toc">
+          <strong>Contents</strong>
+          <ul>
+            {headings.map(item => (
+              <li key={item.id} className={`depth-${item.depth}`}>
+                <a href={`#${item.id}`}>{item.text}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
       <article>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </article>
       <hr />
     </div>
   );
-} 
+}

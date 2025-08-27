@@ -1,14 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
-import { marked } from 'marked';
-
-// Configure marked options for excerpt generation
-marked.setOptions({
-  gfm: true,
-  breaks: true,
-  pedantic: false,
-});
+import readingTime from 'reading-time';
 
 function getAllBlogPosts() {
   const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
@@ -82,7 +75,7 @@ function getAllBlogPosts() {
     
     // Extract a simpler excerpt - take first few lines of content
     // and clean up markdown formatting manually
-    const firstFewLines = content.split('\n').slice(0, 4).join(' ');
+    const firstFewLines = content.split('\n').slice(0, 6).join(' ');
     let excerpt = firstFewLines
       .replace(/\*\*(.*?)\*\*/g, '$1')
       .replace(/\*(.*?)\*/g, '$1')
@@ -93,16 +86,19 @@ function getAllBlogPosts() {
       .trim();
     
     // Limit length and add ellipsis if needed
-    if (excerpt.length > 160) {
-      excerpt = excerpt.substring(0, 157) + '...';
+    if (excerpt.length > 200) {
+      excerpt = excerpt.substring(0, 197) + '...';
     }
+
+    const read = readingTime(content);
     
     return {
       id,
       title,
       excerpt,
       date, // Store the original date string for sorting
-      formattedDate // Store the formatted date for display
+      formattedDate, // Store the formatted date for display
+      readingTimeText: read.text
     };
   }).sort((a, b) => (a.date > b.date ? -1 : 1)); // Sort by date, newest first
 }
@@ -118,12 +114,12 @@ export default function BlogIndex() {
         <p>No blog posts found. Create markdown files in the src/app/blog/posts directory to get started.</p>
       ) : (
         <ul style={{ listStyle: 'none', padding: 0 }}>
-          {allPosts.map(({ id, title, formattedDate, excerpt }) => (
+          {allPosts.map(({ id, title, formattedDate, excerpt, readingTimeText }) => (
             <li key={id} style={{ marginBottom: '20px' }}>
               <Link href={`/blog/${id}`}>
                 <h2 style={{ marginBottom: '5px' }}>{title}</h2>
               </Link>
-              <p style={{ margin: 0, color: '#666', fontSize: '0.9em', fontStyle: 'italic' }}>{formattedDate}</p>
+              <p style={{ margin: 0, color: '#666', fontSize: '0.9em', fontStyle: 'italic' }}>{formattedDate} · {readingTimeText}</p>
               <p className="project-excerpt">{excerpt}</p>
             </li>
           ))}
@@ -134,4 +130,4 @@ export default function BlogIndex() {
       <p><Link href="/">← Back to home</Link></p>
     </div>
   );
-} 
+}
