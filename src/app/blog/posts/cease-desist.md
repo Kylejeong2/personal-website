@@ -44,7 +44,7 @@ All these separate sources made it hard to stay informed.
 
 I saw an opportunity to help. By aggregating all this data into one website, students and parents could have a single source for fire information.
 
-I built an MVP in just a few hours (thanks Claude) using Next.js + Tailwind. Check it out here: [GitHub Repo](https://github.com/Kylejeong2/UCLA-Wildfires)
+I built an MVP in just a few hours (thanks Claude) using Next.js + Tailwind. Check it out here: [GitHub Repo](https://github.com/Kylejeong2/UCLA-Wildfires).(if you're lucky it might still be up at <a href="westwoodfires.org">westwoodfires.org<a/>)
 
 Speed was the priority over perfect code - I just needed to ship something useful fast.
 
@@ -53,9 +53,22 @@ Speed was the priority over perfect code - I just needed to ship something usefu
 ### Launch
 
 Launching on Monday (1/13) across multiple platforms, the site gained significant traction:
-
 - **Reddit**: 400+ upvotes
+<table>
+  <tr>
+    <td><img src="/blog/fires/reddit1.png" alt="Reddit Post 1" loading="lazy" width="100%" /></td>
+    <td><img src="/blog/fires/reddit2.png" alt="Reddit Post 2" loading="lazy" width="100%" height="400px" /></td>
+  </tr>
+</table>
+
 - **X (Twitter)**: 500k views
+<table>
+  <tr>
+    <td><img src="/blog/fires/twitter1.png" alt="Tweet coverage 1" loading="lazy" width="100%" /></td>
+    <td><img src="/blog/fires/twitter2.png" alt="Tweet coverage 2" loading="lazy" width="100%" height="400px" /></td>
+  </tr>
+</table>
+
 - **LinkedIn**: 2k views
 - **Instagram**: 1000+ views
 
@@ -91,7 +104,7 @@ The moral of the story is: you can just do things. Who cares what people say or 
 
 If I didn't push out the first version so fast, someone else would have beat me to it. I didn't care about the details (and using UCLA's name lol) and just put it in front of people's eyeballs. I received a lot of feedback and made changes accordingly as well as optimizations to save money.
 
-*(shoutout upstash for giving me free credits)*
+*(shoutout to upstash for giving me free credits for this)*
 
 <br/>
 

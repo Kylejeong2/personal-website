@@ -149,7 +149,7 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
   });
   
   return (
-    <div style={{ maxWidth: "650px", margin: "0 auto", padding: "20px" }}>
+    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
        <p>
         <Link href="/">← Back to home</Link> | <Link href="/blog">All posts</Link>
       </p>
