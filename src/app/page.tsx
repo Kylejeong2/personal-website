@@ -166,7 +166,7 @@ export default function Home() {
 
       <hr />
 
-      <h2 id="cool">Cool Things I've Done</h2>
+      <h2 id="cool">Cool Things I&apos;ve Done</h2>
       <ul>
         <li>• Built a <a href="https://westwoodfires.org/" target="_blank" rel="noopener noreferrer">website</a> to track the LA wildfires, 40k users in a day</li>
         <li>• Wrestled NCAA D2 my freshman year of <a href="https://sfstategators.com/sports/wrestling/roster/kyle-jeong/5144" target="_blank" rel="noopener noreferrer">college</a></li>
@@ -175,7 +175,7 @@ export default function Home() {
 
       <hr />
 
-      <h2 id="now">What I'm Working On</h2>
+      <h2 id="now">What I&apos;m Working On</h2>
       <ul>
         <li>• Building the future of Web/Browser automation at <a href="https://browserbase.com" target="_blank" rel="noopener noreferrer">Browserbase</a></li>
         <li>• Building a community of builders at UCLA <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">(VEST)</a></li>
@@ -185,6 +185,13 @@ export default function Home() {
 
       <hr />
 
+      <h2 id="bookmarks">a collection of interesting links, articles, and resources</h2>
+      <ul>
+        <li>• <a href="https://a16z.com/market-annealing-getting-to-10m-arr-in-very-early-markets/" target="_blank" rel="noopener noreferrer">Market Annealing</a></li>
+        <li>• <a href="https://alexw.substack.com/p/hire" target="_blank" rel="noopener noreferrer">Hire</a></li>
+      </ul>
+
+      <hr />
       {/* <h2 id="interests">What I'm Interested In</h2>
       <ul>
         <li></li>

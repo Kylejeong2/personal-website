@@ -5,7 +5,7 @@ date: "2025-01-15"
 
 ---
 
-The LA wildfires in early 2025 were a crazy tragedy. People were losing the houses they grew up in, and rampant wildfires took over the news. For me, I'd just started winter quarter at UCLA, which was already super hectic. Early morning classes, trying to catch up with friends, and I was trying to get VEST (my startup club) off the ground. 
+The LA wildfires in early 2025 were a tragedy. People were losing the houses they grew up in, and rampant wildfires took over the news. For me, I'd just started winter quarter at UCLA, which was already super hectic. Early morning classes, trying to catch up with friends, and I was trying to get VEST (my startup club) off the ground. 
 
 We were running events every other day and meeting tons of new people that wanted to join. There probably could not have been a crazier start to my year. 
 
