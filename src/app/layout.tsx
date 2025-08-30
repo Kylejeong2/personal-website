@@ -32,12 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
-          <header style={{ marginBottom: "0" }}>
+          <header style={{ maxWidth: "650px", margin: "0 auto", padding: "20px", marginBottom: "0" }}>
             <nav className="nav-menu" style={{ marginBottom: "5px" }}>
               <Link href="/">Home</Link>
               <Link href="/blog">Blog</Link>
             </nav>
-            <hr style={{ margin: "0 0 10px 0" }} />
+            <hr />
           </header>
           {children}
         </div>

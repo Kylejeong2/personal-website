@@ -203,16 +203,19 @@ ul {
 /* Blog post styles */
 article {
   line-height: 1.6;
+  font-size: 18px;
 }
 
 article h2 {
   margin-top: 25px;
   margin-bottom: 15px;
+  font-size: 1.8em;
 }
 
 article h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  font-size: 1.4em;
 }
 
 article p {

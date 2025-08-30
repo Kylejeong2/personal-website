@@ -185,10 +185,10 @@ export default function Home() {
 
       <hr />
 
-      <h2 id="bookmarks">a collection of interesting links, articles, and resources</h2>
+      <h2 id="bookmarks">Interesting links, articles, and resources</h2>
       <ul>
         <li>• <a href="https://a16z.com/market-annealing-getting-to-10m-arr-in-very-early-markets/" target="_blank" rel="noopener noreferrer">Market Annealing</a></li>
-        <li>• <a href="https://alexw.substack.com/p/hire" target="_blank" rel="noopener noreferrer">Hire</a></li>
+        <li>• <a href="https://alexw.substack.com/p/hire" target="_blank" rel="noopener noreferrer">Hiring</a></li>
       </ul>
 
       <hr />
