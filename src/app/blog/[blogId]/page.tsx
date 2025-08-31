@@ -8,6 +8,60 @@ import readingTime from 'reading-time';
 import { marked } from 'marked';
 import GithubSlugger from 'github-slugger';
 
+function ImageModal() {
+  return (
+    <>
+      <div id="imageModal" className="image-modal" style={{ display: 'none' }}>
+        <div className="image-modal-backdrop"></div>
+        <div className="image-modal-content">
+          <button className="image-modal-close">&times;</button>
+          <img id="modalImage" alt="" style={{ display: 'none' }} />
+        </div>
+      </div>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.image-modal-close');
+            const backdrop = document.querySelector('.image-modal-backdrop');
+            
+            // Make all article images clickable
+            document.querySelectorAll('article img').forEach(img => {
+              img.style.cursor = 'pointer';
+              img.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modalImg.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+              });
+            });
+            
+            // Close modal functions
+            function closeModal() {
+              modal.style.display = 'none';
+              modalImg.style.display = 'none';
+              modalImg.src = '';
+              document.body.style.overflow = 'auto';
+            }
+            
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+            
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+              if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
+              }
+            });
+          });
+        `
+      }} />
+    </>
+  );
+}
+
 // Configure marked
 marked.setOptions({
   gfm: true,
@@ -149,7 +203,7 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
   });
   
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+    <div style={{ maxWidth: "800px", margin: "0 auto" }}>
        <p>
         <Link href="/">← Back to home</Link> | <Link href="/blog">All posts</Link>
       </p>
@@ -167,10 +221,11 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
           </ul>
         </nav>
       )}
-      <article>
+      <article style={{ marginTop: "2rem", marginBottom: "2rem" }}>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </article>
       <hr />
+      <ImageModal />
     </div>
   );
 }

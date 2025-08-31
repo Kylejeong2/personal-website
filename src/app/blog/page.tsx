@@ -107,11 +107,11 @@ export default function BlogIndex() {
   const allPosts = getAllBlogPosts();
   
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+    <div style={{ maxWidth: "800px", margin: "0 auto" }}>
       <h1>Blog Posts</h1>
       
       {allPosts.length === 0 ? (
-        <p>No blog posts found. Create markdown files in the src/app/blog/posts directory to get started.</p>
+        <p>No blog posts found.</p>
       ) : (
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {allPosts.map(({ id, title, formattedDate, excerpt, readingTimeText }) => (

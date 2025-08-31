@@ -5,11 +5,13 @@ date: "2025-08-28"
 
 ---
 
-This was a hackathon project I build during the summer. Thought it was cool so including it here.
+This was a hackathon project I build during the summer of 25. 
 
 <hr />
 
-#### How do agents perform in high-pressure sales scenarios? We answer this by letting AI agents navigate complex sales conversations. The agents need to handle objections, read buyer signals, and close deals to maximize revenue.
+#### How do agents perform in high-pressure sales scenarios? 
+
+We answer this by letting AI agents navigate complex sales conversations. The agents need to handle objections, read buyer signals, and close deals to maximize revenue.
 
 ### Can AI actually sell me this pen?
 
@@ -38,7 +40,9 @@ At a high level there is a Sales-Operator Agent that orchestrates the entire sal
 
 ![Tools](/blog/sales/tools.png)
 
-We've added memory tools to assist with context quality. Previous methods of context maintenance relied on the system intelligently deciding what to keep and not keep in context via summarization. We've implemented a sliding window context with memory tools approach; similar to Vending Bench. The Agent keeps the most recent 30,000 tokens in context before inference, and give the Agent the responsibility to decide what should be saved to memory using tools. Memories are saved as embeddings and memory reads are done with cosine similarity.
+We've added memory tools to assist with context quality. Previous methods of context maintenance relied on the system intelligently deciding what to keep and not keep in context via summarization. We've implemented a sliding window context with memory tools approach; similar to Vending Bench. 
+
+The Agent keeps the most recent 30,000 tokens in context before inference, and give the Agent the responsibility to decide what should be saved to memory using tools. Memories are saved as embeddings and memory reads are done with cosine similarity.
 
 The call_lead tool initiates a subagent that actually completes the sales call with the prospective buyer agent. We decided to delegate this to a subagent task to make context more efficient. The sub agent passes up a summary containing important information about the sales call to the Sales-Operator, and from there it can choose to save to memory, update CRM, etc.
 
@@ -55,6 +59,6 @@ The stark differences between Claude’s patient relationship-building and O3’
 Can AI actually sell? Yes—but only to customers who want to buy. The art of converting skeptics, handling complex objections, and building long-term relationships remains uniquely human, at least for now.
 
 Reference:
-By Kyle Jeong, Sameel Arif, & Hamza Mostafa
+By Kyle Jeong, <a href="https://www.linkedin.com/in/sameelarif/" target="_blank">Sameel Arif</a>, & <a href="https://www.linkedin.com/in/hamza-mostafa/" target="_blank"> Hamza Mostafa <a/>
 
 Heavily Inspired by Vending Bench https://andonlabs.com/evals/vending-bench
