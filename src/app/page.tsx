@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getRecentBlogPosts } from '../utils/blog';
 
 export default function Home() {
+  const recentPosts = getRecentBlogPosts().slice(0, 2);
   
   return (
-    <div style={{ maxWidth: "650px", margin: "0 auto", padding: "20px", position: "relative" }}>
+    <div style={{ margin: "0 auto", position: "relative" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "20px" }}>
         <div>
           <h1 style={{ margin: 0 }}>Kyle Jeong</h1>
@@ -64,7 +66,7 @@ export default function Home() {
       <p>
         Hey, I&apos;m <strong>Kyle</strong>. I am 20 years old and I&apos;m currently in LA (for school), but will be in SF this summer. 
         I&apos;m a student at UCLA studying Math and CS and looking to either be an engineer at a fast growing startup or start my own.
-        <br /> <br /> In my free time, I enjoy going to the gym, trying to learn magic tricks, and listening to house music.
+        <br /> <br /> In my free time, I enjoy going to the <a href="https://x.com/kylejeong21/status/1912662837488656824/video/1" target="_blank" rel="noopener noreferrer">gym</a>, trying to learn magic tricks, and listening to house music.
       </p>
 
       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
@@ -201,10 +203,36 @@ export default function Home() {
       <p>
       </p> */}
 
-      <h2 id="blog">Blog</h2>
+      <h2 id="writing">Writing</h2>
       <p>
         Check out my <Link href="/blog">blog</Link> where I write about new technologies, my experiences, technical projects, and other topics.
       </p>
+
+      <h3>Recent Posts</h3>
+      <div style={{ display: "flex", flexDirection: "row", gap: "10px", marginTop: "10px", marginBottom: "20px" }}>
+        {recentPosts.map((post) => (
+          <div key={post.id} style={{
+            flex: "1",
+            marginBottom: "15px",
+            padding: "15px",
+            backgroundColor: "white",
+            borderRadius: "5px",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.12)"
+          }}>
+            <h4 style={{ margin: "0 0 8px 0", fontSize: "16px" }}>
+              <Link href={`/blog/${post.id}`} style={{ color: "#333", textDecoration: "none" }}>
+                {post.title}
+              </Link>
+            </h4>
+            <p style={{ margin: "0 0 8px 0", color: "#666", fontSize: "14px" }}>
+              {post.excerpt}
+            </p>
+            <div style={{ fontSize: "12px", color: "#888" }}>
+              {post.formattedDate} • {post.readingTimeText}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <hr />
 
