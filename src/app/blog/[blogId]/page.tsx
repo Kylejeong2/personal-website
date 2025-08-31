@@ -187,14 +187,15 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
   // Sanitize HTML
   const htmlContent = sanitizeHtml(rawHtml, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat([
-      'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'code', 'span', 'kbd', 'table', 'thead', 'tbody', 'tr', 'th', 'td'
+      'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'code', 'span', 'kbd', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'figure', 'figcaption'
     ]),
     allowedAttributes: {
-      '*': ['id', 'class'],
+      '*': ['id', 'class', 'style'],
       a: ['href', 'name', 'target', 'rel', 'id'],
       img: ['src', 'alt', 'title', 'width', 'height', 'loading'],
       code: ['class'],
-      span: ['class']
+      span: ['class'],
+      td: ['style']
     },
     allowedSchemes: ['http', 'https', 'mailto'],
     transformTags: {

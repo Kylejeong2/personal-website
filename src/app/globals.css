@@ -321,6 +321,27 @@ article img {
   margin: 10px 0;
 }
 
+/* Figure and caption styles for blog posts */
+article figure {
+  margin: 0;
+  text-align: center;
+}
+
+article figure img {
+  margin: 0 auto 8px auto;
+  display: block;
+}
+
+article figcaption {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 0;
+  line-height: 1.4;
+}
+
 /* Image Modal Styles */
 .image-modal {
   position: fixed;
