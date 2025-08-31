@@ -66,7 +66,7 @@ I think I had a solid balance then of having fun with my friends at school and d
 
 This summer I learned that I definitely prefer an in person culture. While some teams like Vercel, Railway, and Linear have found success in a remote first culture, I believe almost nothing can beat the feeling of being in office working on something you're super passionate about with people who share your beliefs. 
 
-I moved to SF after school ended at a busy time. We were ramping up for a huge launch: our $40M series B and Director: our no-code workflow automation builder. We worked early mornings and late nights and I was super pumped to get this across the line. Our launch was a success, my friend helped film and direct our launch video and we had hundreds of thousands of eyes on us. 
+I moved up to SF after school ended, during a super busy month. We were ramping up for a huge launch: our $40M series B and Director: our no-code workflow automation builder. We worked early mornings and late nights and I was super pumped to get this across the line. Our launch was a success, my friend helped film and direct our launch video and we had hundreds of thousands of eyes on us. 
 
 <table>
   <tr>
