@@ -211,7 +211,7 @@ export default function Home() {
       <h3>Recent Posts</h3>
       <div style={{ display: "flex", flexDirection: "row", gap: "10px", marginTop: "10px", marginBottom: "20px" }}>
         {recentPosts.map((post) => (
-          <div key={post.id} style={{
+          <div key={post.id} className="recent-post-card" style={{
             flex: "1",
             marginBottom: "15px",
             padding: "15px",
@@ -219,15 +219,15 @@ export default function Home() {
             borderRadius: "5px",
             boxShadow: "0 1px 3px rgba(0,0,0,0.12)"
           }}>
-            <h4 style={{ margin: "0 0 8px 0", fontSize: "16px" }}>
+            <h4 className="recent-post-title" style={{ margin: "0 0 8px 0", fontSize: "16px" }}>
               <Link href={`/blog/${post.id}`} style={{ color: "#333", textDecoration: "none" }}>
                 {post.title}
               </Link>
             </h4>
-            <p style={{ margin: "0 0 8px 0", color: "#666", fontSize: "14px" }}>
+            <p className="recent-post-excerpt" style={{ margin: "0 0 8px 0", color: "#666", fontSize: "14px" }}>
               {post.excerpt}
             </p>
-            <div style={{ fontSize: "12px", color: "#888" }}>
+            <div className="recent-post-meta" style={{ fontSize: "12px", color: "#888" }}>
               {post.formattedDate} • {post.readingTimeText}
             </div>
           </div>

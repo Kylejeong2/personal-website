@@ -119,7 +119,7 @@ export default function BlogIndex() {
               <Link href={`/blog/${id}`}>
                 <h2 style={{ marginBottom: '5px' }}>{title}</h2>
               </Link>
-              <p style={{ margin: 0, color: '#666', fontSize: '0.9em', fontStyle: 'italic' }}>{formattedDate} · {readingTimeText}</p>
+              <p className="blog-meta" style={{ margin: 0, color: '#666', fontSize: '0.9em', fontStyle: 'italic' }}>{formattedDate} · {readingTimeText}</p>
               <p className="project-excerpt">{excerpt}</p>
             </li>
           ))}

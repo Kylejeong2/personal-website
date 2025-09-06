@@ -26,12 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="data:," />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div style={{ maxWidth: "45vw", margin: "0 auto", padding: "20px" }}>
+        <div className="main-container">
           <header style={{ margin: "0 auto", marginBottom: "0" }}>
             <nav className="nav-menu" style={{ marginBottom: "5px" }}>
               <Link href="/">Home</Link>
