@@ -172,7 +172,7 @@ export default function Home() {
       <ul>
         <li>• Built a <a href="https://westwoodfires.org/" target="_blank" rel="noopener noreferrer">website</a> to track the LA wildfires, 40k users in a day</li>
         <li>• Wrestled NCAA D2 my freshman year of <a href="https://sfstategators.com/sports/wrestling/roster/kyle-jeong/5144" target="_blank" rel="noopener noreferrer">college</a></li>
-        <li>• Founded the premier builder community at UCLA via <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">VEST</a> (100+ members)</li>
+        <li>• Founded the builder community at UCLA via <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">VEST</a> (100+ members)</li>
       </ul>
 
       <hr />
@@ -209,25 +209,41 @@ export default function Home() {
       </p>
 
       <h3>Recent Posts</h3>
-      <div style={{ display: "flex", flexDirection: "row", gap: "10px", marginTop: "10px", marginBottom: "20px" }}>
+      <div style={{ display: "flex", flexDirection: "row", gap: "20px", marginTop: "10px", marginBottom: "20px" }}>
         {recentPosts.map((post) => (
           <div key={post.id} className="recent-post-card" style={{
-            flex: "1",
+            flex: "1 1 0%",
+            minWidth: "0",
             marginBottom: "15px",
             padding: "15px",
             backgroundColor: "white",
             borderRadius: "5px",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.12)"
+            boxShadow: "0 1px 3px rgba(0,0,0,0.12)",
+            display: "flex",
+            flexDirection: "column"
           }}>
             <h4 className="recent-post-title" style={{ margin: "0 0 8px 0", fontSize: "16px" }}>
               <Link href={`/blog/${post.id}`} style={{ color: "#333", textDecoration: "none" }}>
                 {post.title}
               </Link>
             </h4>
-            <p className="recent-post-excerpt" style={{ margin: "0 0 8px 0", color: "#666", fontSize: "14px" }}>
+            <p className="recent-post-excerpt" style={{
+              margin: "0 0 8px 0",
+              color: "#666",
+              fontSize: "14px",
+              flex: "1",
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden"
+            }}>
               {post.excerpt}
             </p>
-            <div className="recent-post-meta" style={{ fontSize: "12px", color: "#888" }}>
+            <div className="recent-post-meta" style={{
+              fontSize: "12px",
+              color: "#888",
+              marginTop: "auto"
+            }}>
               {post.formattedDate} • {post.readingTimeText}
             </div>
           </div>

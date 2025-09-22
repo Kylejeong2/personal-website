@@ -74,17 +74,43 @@ function getAllBlogPosts() {
     }
     
     // Extract a simpler excerpt - take first few lines of content
-    // and clean up markdown formatting manually
+    // and clean up markdown formatting thoroughly
     const firstFewLines = content.split('\n').slice(0, 6).join(' ');
     let excerpt = firstFewLines
+      // HTML tags (remove all HTML tags but keep content)
+      .replace(/<[^>]*>/g, '')
+      // Headers
+      .replace(/^#{1,6}\s+/gm, '')
+      // Bold and italic
       .replace(/\*\*(.*?)\*\*/g, '$1')
       .replace(/\*(.*?)\*/g, '$1')
+      .replace(/__(.*?)__/g, '$1')
+      .replace(/_(.*?)_/g, '$1')
+      // Links (markdown format)
       .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)\([^)]+\)/g, '$1')
+      // Code
       .replace(/`([^`]+)`/g, '$1')
-      .replace(/#{1,6}\s?/g, '')
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/~~~[\s\S]*?~~~/g, '')
+      // Lists
+      .replace(/^[\s]*[-*+]\s+/gm, '')
+      .replace(/^[\s]*\d+\.\s+/gm, '')
+      // Blockquotes
+      .replace(/^>\s*/gm, '')
+      // Horizontal rules
+      .replace(/^[\s]*[-*_]{3,}[\s]*$/gm, '')
+      // Strikethrough
+      .replace(/~~(.*?)~~/g, '$1')
+      // Tables
+      .replace(/\|[\s\S]*?\|/g, '')
+      // Clean up extra whitespace and line breaks
+      .replace(/\n{3,}/g, '\n\n')
+      .replace(/\n/g, ' ')
       .replace(/\s{2,}/g, ' ')
+      .replace(/^\s+|\s+$/g, '')
       .trim();
-    
+
     // Limit length and add ellipsis if needed
     if (excerpt.length > 200) {
       excerpt = excerpt.substring(0, 197) + '...';
@@ -105,27 +131,69 @@ function getAllBlogPosts() {
 
 export default function BlogIndex() {
   const allPosts = getAllBlogPosts();
-  
+
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto" }}>
       <h1>Blog Posts</h1>
-      
+
       {allPosts.length === 0 ? (
         <p>No blog posts found.</p>
       ) : (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px',
+          marginBottom: '40px'
+        }}>
           {allPosts.map(({ id, title, formattedDate, excerpt, readingTimeText }) => (
-            <li key={id} style={{ marginBottom: '20px' }}>
-              <Link href={`/blog/${id}`}>
-                <h2 style={{ marginBottom: '5px' }}>{title}</h2>
+            <div key={id} style={{
+              backgroundColor: "white",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              padding: "20px",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+              cursor: "pointer",
+              minHeight: "200px",
+              display: "flex",
+              flexDirection: "column"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+            }}>
+              <Link href={`/blog/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <h2 style={{ margin: "0 0 10px 0", fontSize: "18px", lineHeight: "1.3" }}>{title}</h2>
               </Link>
-              <p className="blog-meta" style={{ margin: 0, color: '#666', fontSize: '0.9em', fontStyle: 'italic' }}>{formattedDate} · {readingTimeText}</p>
-              <p className="project-excerpt">{excerpt}</p>
-            </li>
+              <p className="blog-meta" style={{
+                margin: "0 0 12px 0",
+                color: '#666',
+                fontSize: '0.85em',
+                fontStyle: 'italic'
+              }}>
+                {formattedDate} · {readingTimeText}
+              </p>
+              <p className="project-excerpt" style={{
+                margin: 0,
+                color: '#555',
+                fontSize: '14px',
+                lineHeight: '1.5',
+                flex: '1',
+                display: '-webkit-box',
+                WebkitLineClamp: 4,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}>
+                {excerpt}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-      
+
       <hr />
       <p><Link href="/">← Back to home</Link></p>
     </div>

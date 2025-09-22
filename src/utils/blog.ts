@@ -105,12 +105,40 @@ export function getRecentBlogPosts() {
               excerpt = content.split(/\n+/)[0] || '';
             }
             
-            // Clean up markdown syntax
+            // Clean up markdown syntax thoroughly
             excerpt = excerpt
-              .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markdown
-              .replace(/\*(.*?)\*/g, '$1')     // Remove italic markdown
-              .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Replace links with just text
-              .replace(/`([^`]+)`/g, '$1')     // Remove code formatting
+              // HTML tags (remove all HTML tags but keep content)
+              .replace(/<[^>]*>/g, '')
+              // Headers
+              .replace(/^#{1,6}\s+/gm, '')
+              // Bold and italic
+              .replace(/\*\*(.*?)\*\*/g, '$1')
+              .replace(/\*(.*?)\*/g, '$1')
+              .replace(/__(.*?)__/g, '$1')
+              .replace(/_(.*?)_/g, '$1')
+              // Links (markdown format)
+              .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+              .replace(/\[([^\]]+)\]\([^)]+\)\([^)]+\)/g, '$1')
+              // Code
+              .replace(/`([^`]+)`/g, '$1')
+              .replace(/```[\s\S]*?```/g, '')
+              .replace(/~~~[\s\S]*?~~~/g, '')
+              // Lists
+              .replace(/^[\s]*[-*+]\s+/gm, '')
+              .replace(/^[\s]*\d+\.\s+/gm, '')
+              // Blockquotes
+              .replace(/^>\s*/gm, '')
+              // Horizontal rules
+              .replace(/^[\s]*[-*_]{3,}[\s]*$/gm, '')
+              // Strikethrough
+              .replace(/~~(.*?)~~/g, '$1')
+              // Tables
+              .replace(/\|[\s\S]*?\|/g, '')
+              // Clean up extra whitespace and line breaks
+              .replace(/\n{3,}/g, '\n\n')
+              .replace(/\n/g, ' ')
+              .replace(/\s{2,}/g, ' ')
+              .replace(/^\s+|\s+$/g, '')
               .trim();
             
             // Limit length and add ellipsis if needed
