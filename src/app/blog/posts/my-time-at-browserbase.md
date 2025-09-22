@@ -1,7 +1,7 @@
 ---
 
 title: "Reflections on 6 months at Browserbase"
-date: "2025-08-"
+date: "2025-08-30"
 
 ---
 

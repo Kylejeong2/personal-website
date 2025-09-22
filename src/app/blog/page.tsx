@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import readingTime from 'reading-time';
+import BlogCard from './BlogCard';
 
 function getAllBlogPosts() {
   const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
@@ -129,6 +130,7 @@ function getAllBlogPosts() {
   }).sort((a, b) => (a.date > b.date ? -1 : 1)); // Sort by date, newest first
 }
 
+
 export default function BlogIndex() {
   const allPosts = getAllBlogPosts();
 
@@ -145,51 +147,8 @@ export default function BlogIndex() {
           gap: '24px',
           marginBottom: '40px'
         }}>
-          {allPosts.map(({ id, title, formattedDate, excerpt, readingTimeText }) => (
-            <div key={id} style={{
-              backgroundColor: "white",
-              borderRadius: "8px",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              padding: "20px",
-              transition: "transform 0.2s ease, box-shadow 0.2s ease",
-              cursor: "pointer",
-              minHeight: "200px",
-              display: "flex",
-              flexDirection: "column"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
-            }}>
-              <Link href={`/blog/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <h2 style={{ margin: "0 0 10px 0", fontSize: "18px", lineHeight: "1.3" }}>{title}</h2>
-              </Link>
-              <p className="blog-meta" style={{
-                margin: "0 0 12px 0",
-                color: '#666',
-                fontSize: '0.85em',
-                fontStyle: 'italic'
-              }}>
-                {formattedDate} · {readingTimeText}
-              </p>
-              <p className="project-excerpt" style={{
-                margin: 0,
-                color: '#555',
-                fontSize: '14px',
-                lineHeight: '1.5',
-                flex: '1',
-                display: '-webkit-box',
-                WebkitLineClamp: 4,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden'
-              }}>
-                {excerpt}
-              </p>
-            </div>
+          {allPosts.map((post) => (
+            <BlogCard key={post.id} post={post} />
           ))}
         </div>
       )}
