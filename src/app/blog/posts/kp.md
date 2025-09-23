@@ -9,7 +9,7 @@ If you're reading this, you've probably seen someone's "Engineering Fellow" or "
 
 I'm Kyle, and I did the fellowship in summer 2025. Here's some honest thoughts.
 
-![Group photo of KP fellows](/blog/kp/group.jpg)
+![Group photo of KP fellows](/blog/kp/group.JPG)
 
 ### What is KP? And what is the fellowship?
 
@@ -17,7 +17,7 @@ Kleiner Perkins is a venture capital firm that typically invests in companies at
 
 The [Kleiner Perkins fellowship](https://www.kleinerperkins.com/fellows/) is a program that helps connect talented students who are coming to SF for summer internships at their portfolio companies. We hang out, have fun events (kayaking, baseball games in box suites, park days, etc.), and start the summer with a friend group of non-coworkers.
 
-![Kayaking with KP fellows](/blog/kp/kayak.jpg)
+![Kayaking with KP fellows](/blog/kp/kayak.JPG)
 
 ### My personal experience 
 
