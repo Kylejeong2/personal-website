@@ -5,16 +5,16 @@ date: "2025-08-30"
 
 ---
 
-August marks the sixth month I've been officially employed at [Browserbase](https://browserbase.com). Being only 20, I've never had a job for more than a few months, even my summer jobs back when I was in high school.
+This August marks six months at [Browserbase](https://browserbase.com). At 20, I've never held a job longer than a few months—not even summer gigs in high school.
 
-Other than [wrestling](https://www.youtube.com/watch?v=_OE4MznrxOE), I've never had to commit to something for so long. It's taught me a lot about myself and now feels like a good time to reflect and think about how committing myself to a company for so long has changed the way I live my life.
+Other than [wrestling](https://www.youtube.com/watch?v=_OE4MznrxOE), I've never committed to something this long. It's taught me a lot about myself and now feels like a good time to reflect on how this commitment has changed my life.
 
 ### What is Browserbase? 
 
 The central gateway to the internet is the web browser. With a browser, users can both read from and write to the internet. 
 
 Humans use google chrome, safari, etc. as their browser. But AI agents use Browserbase as their gateway to the modern internet. 
-To this date, many of our customers use us for 3 main things: 
+Many customers use us for three main things: 
 
 <ul>
 <li>• Web scraping</li>
@@ -32,28 +32,28 @@ We offer 3 main products:
 
 Like [Vercel](https://vercel.com), we're pioneering a new market in the age of AI as the defacto Browser Cloud. 
 
-### My story? 
+### My story
 
-We'll start from the beginning. I joined this company back in march in a bit of an unorthodox way. Rather than apply for the position through an official job application, I actually stumbled upon a DM on twitter from Paul Klein IV, the founder and CEO.
+We'll start from the beginning. I joined this company back in March in a bit of an unorthodox way. Rather than apply for the position through an official job application, I actually received a DM on twitter from Paul Klein IV, the founder and CEO.
 
 >"Yo how have we not met yet?"
 ![Original DM](/blog/browserbase/dm.png)
 
 We traded messages and he told me to stop by the office. So I hitched a ride to SF and came into the office to meet him. 
 
-I mostly asked questions about founding, what it's like to have a company get acquired, how do you raise money so quickly, how to fall into pmf, etc. 
+I mostly asked questions about founding, what it's like to have a company get acquired, how do you raise money so quickly, how to find PMF, etc. 
 
-The one thing I still remember from our conversation in a lyft to pick up lunch was it's really important to build painkillers, not vitamins. The rest is history. I did some official interview rounds with the team, with some strong recs from Paul and my good friend Alex, and started my first week in person end of march while on spring break.
+One thing stuck: "You should always build painkillers, not vitamins." The rest is history. I went through the official interview process, then started my first in-person week at the end of March during spring break.
 
-It was a blast, sleeping on my friends couching as coming in for work was awesome. It was honestly super energizing compared to the dreadful probability theory courses I was sitting in at UCLA. 
+It was a blast—crashing on a friend's couch, coming in for work. Super energizing compared to the dreadful probability theory courses at UCLA. 
 
-### Working Remote 
+### Working Remote
 
 After spring break, I had to go back to school in down in LA, which is 5 hours driving from SF. Not exactly a commutable distance. 
 
-I converted to remote and worked FT hours while going to school. I mostly skipped my lectures and found a way to get by in my courses while putting a majority of my effort in to my wrk and trying to learn from the team as much as I could. 
+I went remote, working full-time while in school. I mostly skipped lectures, got by in courses, and focused most of my effort on work—learning from the team as much as possible. 
 
-I even flew up to SF a couple times during the quarter and popped in to work while I was there. I distinctly remember working on rewriting and relaunching our MCP server, which had become a huge growth lever for stagehand. Alex and I had spent a while creating more tools and refining the quality of the server and our launch ended up getting a pretty good amount of viewership. As of now, the server is at **2.5k** github stars.
+I even flew up to SF a couple times during the quarter and popped in to work while I was there. I distinctly remember working on rewriting and relaunching our MCP server, which had become a huge growth lever for Stagehand. I spent a while creating more tools and refining the quality of the server and our launch ended up getting a pretty good amount of viewership. As of now, the server is at **2.5k** github stars.
 
 <figure>
 <img src="/blog/browserbase/helmet.png" alt="helmet" loading="lazy" width="100%" />
@@ -64,7 +64,7 @@ I think I had a solid balance then of having fun with my friends at school and d
 
 ### Fulltime in Office
 
-This summer I learned that I definitely prefer an in person culture. While some teams like Vercel, Railway, and Linear have found success in a remote first culture, I believe almost nothing can beat the feeling of being in office working on something you're super passionate about with people who share your beliefs. 
+This summer taught me I prefer in-person culture. While teams like Vercel, Railway, and Linear succeed remotely, nothing beats office energy—working on something you're passionate about with like-minded people. 
 
 I moved up to SF after school ended, during a super busy month. We were ramping up for a huge launch: our $40M series B and Director: our no-code workflow automation builder. We worked early mornings and late nights and I was super pumped to get this across the line. Our launch was a success, my friend helped film and direct our launch video and we had hundreds of thousands of eyes on us. 
 
@@ -84,7 +84,7 @@ The rest of the summer has been smooth sailing. I show up in the morning, try to
   <figcaption>Team trip to Hawaii</figcaption>
 </figure>
 
-My day as the sole growth engineer usually consists of reviewing, creating, and publishing content across all of our platforms, as well as building tools to improve the efficiency of our GTM team. I've had stints across engineering teams, shipping code to the website, Stagehand, and even Director for a week and a half. 
+As the sole growth engineer, my days involve reviewing, creating, and publishing content across platforms, plus building tools to boost GTM team efficiency. I've done stints across engineering teams, shipping code to the website, Stagehand, and Director. 
 
 I also spend a lot of time building demos to show people how to use Browserbase and introducing them to the product suite. 
 
@@ -97,11 +97,11 @@ I'm also working on a fun field marketing growth hack, where we're sending custo
   <figcaption>Custom Browserbase lego sets</figcaption>
 </figure>
 
-### Whats next? 
+### What's next?
 
 I think a big reason why I wanted to work at Browserbase is because I want to start a company one day. Being at a company that's growing so fast with people that you admire is something that you cannot pass up. 
 
-I'm super grateful for the opportunity to wake up in SF and work on projects that impact real people. It feels amazing to watch the work that you do move the needle for the company and bring all of us closer to our goals. 
+I'm super grateful for the chance to wake up in SF and work on projects impacting real people. It feels amazing watching your work move the needle, and bring us closer to our goals. 
 
 <table>
   <tr>
@@ -115,6 +115,6 @@ I'm super grateful for the opportunity to wake up in SF and work on projects tha
 </table>
 <br />
 
-Time to keep building. 
+Time to keep building.
 
-If you want to help shape future of Browser Infrastructure and dominate this emerging market, apply [here](https://browserbase.com/careers).
+If you want to help shape the future of Browser Infrastructure and dominate this emerging market, apply [here](https://browserbase.com/careers).
