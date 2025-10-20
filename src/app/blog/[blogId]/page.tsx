@@ -16,6 +16,7 @@ function ImageModal() {
         <div className="image-modal-backdrop"></div>
         <div className="image-modal-content">
           <button className="image-modal-close">&times;</button>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img id="modalImage" alt="" style={{ display: 'none' }} />
         </div>
       </div>
@@ -73,7 +74,6 @@ function parseBlogMetadata(fullPath: string, blogId: string) {
   let description = '';
   let keywords: string[] = [];
   let author = 'Kyle Jeong';
-  let ogImage = '';
   
   // Look for frontmatter
   const frontmatterMatch = fileContents.match(/^---\s*([\s\S]*?)---\s*/m);
@@ -112,12 +112,6 @@ function parseBlogMetadata(fullPath: string, blogId: string) {
     if (authorMatch) {
       author = authorMatch[1];
     }
-    
-    // Extract ogImage
-    const ogImageMatch = frontmatter.match(/ogImage:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
-    if (ogImageMatch) {
-      ogImage = ogImageMatch[1];
-    }
   }
   
   // If no title in frontmatter, look for the first h1
@@ -148,7 +142,7 @@ function parseBlogMetadata(fullPath: string, blogId: string) {
       .substring(0, 160);
   }
   
-  return { fileContents, content, title, date, description, keywords, author, ogImage };
+  return { fileContents, content, title, date, description, keywords, author };
 }
 
 // Configure marked
@@ -170,7 +164,7 @@ export async function generateMetadata({ params }: { params: Promise<{ blogId: s
     };
   }
   
-  const { title, date, description, keywords, author, ogImage } = parseBlogMetadata(fullPath, blogId);
+  const { title, date, description, keywords, author } = parseBlogMetadata(fullPath, blogId);
   
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kylejeong.com';
   const postUrl = `${siteUrl}/blog/${blogId}`;
