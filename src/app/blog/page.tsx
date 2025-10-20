@@ -3,6 +3,25 @@ import path from 'path';
 import Link from 'next/link';
 import readingTime from 'reading-time';
 import BlogCard from './BlogCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Kyle Jeong',
+  description: 'Thoughts on software engineering, startups, AI, and building products. Read articles about web development, browser automation, and tech insights.',
+  keywords: ['blog', 'kyle jeong', 'software engineering', 'tech blog', 'web development', 'startups', 'AI', 'programming'],
+  authors: [{ name: 'Kyle Jeong' }],
+  openGraph: {
+    title: 'Blog | Kyle Jeong',
+    description: 'Thoughts on software engineering, startups, AI, and building products.',
+    url: 'https://kylejeong.com/blog',
+    siteName: 'Kyle Jeong',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: {
+    canonical: 'https://kylejeong.com/blog',
+  },
+};
 
 function getAllBlogPosts() {
   const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');

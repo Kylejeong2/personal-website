@@ -7,6 +7,7 @@ import sanitizeHtml from 'sanitize-html';
 import readingTime from 'reading-time';
 import { marked } from 'marked';
 import GithubSlugger from 'github-slugger';
+import type { Metadata } from 'next';
 
 function ImageModal() {
   return (
@@ -62,12 +63,151 @@ function ImageModal() {
   );
 }
 
+// Helper function to parse blog metadata
+function parseBlogMetadata(fullPath: string, blogId: string) {
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  
+  let content = fileContents;
+  let title = blogId;
+  let date = '';
+  let description = '';
+  let keywords: string[] = [];
+  let author = 'Kyle Jeong';
+  let ogImage = '';
+  
+  // Look for frontmatter
+  const frontmatterMatch = fileContents.match(/^---\s*([\s\S]*?)---\s*/m);
+  if (frontmatterMatch) {
+    content = fileContents.substring(frontmatterMatch[0].length).trim();
+    const frontmatter = frontmatterMatch[1];
+    
+    // Extract title
+    const titleMatch = frontmatter.match(/title:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
+    if (titleMatch) {
+      title = titleMatch[1];
+    }
+    
+    // Extract date
+    const dateMatch = frontmatter.match(/date:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m);
+    if (dateMatch) {
+      date = dateMatch[1];
+    }
+    
+    // Extract description
+    const descMatch = frontmatter.match(/description:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
+    if (descMatch) {
+      description = descMatch[1];
+    }
+    
+    // Extract keywords (can be comma-separated or array format)
+    const keywordsMatch = frontmatter.match(/keywords:\s*\[(.*?)\]/m) || 
+                          frontmatter.match(/keywords:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
+    if (keywordsMatch) {
+      const keywordsStr = keywordsMatch[1];
+      keywords = keywordsStr.split(',').map(k => k.trim().replace(/['"]/g, '')).filter(Boolean);
+    }
+    
+    // Extract author
+    const authorMatch = frontmatter.match(/author:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
+    if (authorMatch) {
+      author = authorMatch[1];
+    }
+    
+    // Extract ogImage
+    const ogImageMatch = frontmatter.match(/ogImage:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
+    if (ogImageMatch) {
+      ogImage = ogImageMatch[1];
+    }
+  }
+  
+  // If no title in frontmatter, look for the first h1
+  if (title === blogId) {
+    const titleMatch = content.match(/^# (.*$)/m);
+    if (titleMatch) {
+      title = titleMatch[1];
+      content = content.replace(/^# .*$/m, '').trim();
+    }
+  }
+  
+  // If no date, use file modification time
+  if (!date) {
+    const stats = fs.statSync(fullPath);
+    date = stats.mtime.toISOString().split('T')[0];
+  }
+  
+  // If no description, generate from first paragraph
+  if (!description) {
+    const firstParagraph = content.split('\n\n')[0];
+    description = firstParagraph
+      .replace(/#{1,6}\s+/g, '')
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\*(.*?)\*/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/`([^`]+)`/g, '$1')
+      .trim()
+      .substring(0, 160);
+  }
+  
+  return { fileContents, content, title, date, description, keywords, author, ogImage };
+}
+
 // Configure marked
 marked.setOptions({
   gfm: true,
   breaks: true,
   pedantic: false
 });
+
+export async function generateMetadata({ params }: { params: Promise<{ blogId: string }> }): Promise<Metadata> {
+  const { blogId } = await params;
+  const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
+  const fullPath = path.join(postsDirectory, `${blogId}.md`);
+  
+  if (!fs.existsSync(fullPath)) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.'
+    };
+  }
+  
+  const { title, date, description, keywords, author, ogImage } = parseBlogMetadata(fullPath, blogId);
+  
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kylejeong.com';
+  const postUrl = `${siteUrl}/blog/${blogId}`;
+  
+  return {
+    title: `${title} | Kyle Jeong`,
+    description,
+    keywords: keywords.length > 0 ? keywords : ['blog', 'kyle jeong', 'software engineering', 'tech'],
+    authors: [{ name: author }],
+    creator: author,
+    publisher: author,
+    openGraph: {
+      title,
+      description,
+      url: postUrl,
+      siteName: 'Kyle Jeong',
+      type: 'article',
+      publishedTime: date,
+      authors: [author],
+      locale: 'en_US',
+    },
+    alternates: {
+      canonical: postUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'src/app/blog/posts');
@@ -90,47 +230,7 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
     notFound();
   }
   
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  
-  // Extract frontmatter if present
-  let content = fileContents;
-  let title = blogId;
-  let date = '';
-  
-  // Look for frontmatter
-  const frontmatterMatch = fileContents.match(/^---\s*([\s\S]*?)---\s*/m);
-  if (frontmatterMatch) {
-    // Extract the content after frontmatter
-    content = fileContents.substring(frontmatterMatch[0].length).trim();
-    
-    // Extract title from frontmatter
-    const titleMatch = frontmatterMatch[1].match(/title:\s*['"]?(.*?)['"]?(\s*$|\s*\n)/m);
-    if (titleMatch) {
-      title = titleMatch[1];
-    }
-    
-    // Extract date from frontmatter
-    const dateMatch = frontmatterMatch[1].match(/date:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m);
-    if (dateMatch) {
-      date = dateMatch[1];
-    }
-  }
-  
-  // If no title in frontmatter, look for the first h1 tag
-  if (title === blogId) {
-    const titleMatch = content.match(/^# (.*$)/m);
-    if (titleMatch) {
-      title = titleMatch[1];
-      // Remove the title from content as we'll display it separately
-      content = content.replace(/^# .*$/m, '').trim();
-    }
-  }
-  
-  // If no date was found in frontmatter, use file modification time
-  if (!date) {
-    const stats = fs.statSync(fullPath);
-    date = stats.mtime.toISOString().split('T')[0];
-  }
+  const { content, title, date, description, keywords, author } = parseBlogMetadata(fullPath, blogId);
   
   // Format the date properly
   let formattedDate = '';
@@ -203,8 +303,39 @@ export default async function BlogPost({ params }: { params: Promise<{ blogId: s
     },
   });
   
+  // Structured data for SEO (JSON-LD)
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kylejeong.com';
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description || title,
+    author: {
+      '@type': 'Person',
+      name: author,
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: author,
+    },
+    datePublished: date,
+    dateModified: date,
+    url: `${siteUrl}/blog/${blogId}`,
+    keywords: keywords.join(', '),
+    articleBody: content,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blog/${blogId}`,
+    },
+  };
+  
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
        <p>
         <Link href="/">← Back to home</Link> | <Link href="/blog">All posts</Link>
       </p>

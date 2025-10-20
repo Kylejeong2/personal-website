@@ -1,8 +1,10 @@
 ---
-
 title: "My experience as a KP fellow"
 date: "2025-09-01"
-
+description: "An honest review of the Kleiner Perkins Fellowship program - what fellows actually do, networking benefits, events, and whether it's worth applying for."
+keywords: ["Kleiner Perkins", "KP fellowship", "venture capital", "internship", "SF summer", "tech fellowship", "networking", "career development", "VC"]
+author: "Kyle Jeong"
+ogImage: "/blog/kp/group.JPG"
 ---
 
 If you're reading this, you've probably seen someone's "Engineering Fellow" or "Product Fellow" experience on LinkedIn. You searched up the program and found little about what it is, what fellows do/get, and if it's worth applying.

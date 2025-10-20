@@ -1,8 +1,10 @@
 ---
-
 title: "Reflections on 6 months at Browserbase"
 date: "2025-08-30"
-
+description: "Reflecting on my first six months at Browserbase, working on browser infrastructure for AI agents, and what I've learned as a growth engineer at a fast-growing startup."
+keywords: ["Browserbase", "startup", "growth engineering", "web automation", "browser infrastructure", "career", "internship", "AI agents"]
+author: "Kyle Jeong"
+ogImage: "/blog/browserbase/hawaii.jpeg"
 ---
 
 This August marks six months at [Browserbase](https://browserbase.com). At 20, I've never held a job longer than a few months—not even summer gigs in high school.

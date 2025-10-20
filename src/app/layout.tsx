@@ -3,8 +3,35 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kyle Jeong",
-  description: "",
+  title: {
+    default: "Kyle Jeong",
+    template: "%s | Kyle Jeong",
+  },
+  description: "Software engineer and builder. Working on browser infrastructure at Browserbase. Sharing thoughts on AI, startups, and building products.",
+  keywords: ["Kyle Jeong", "software engineer", "developer", "AI", "startups", "tech", "Browserbase", "web development"],
+  authors: [{ name: "Kyle Jeong" }],
+  creator: "Kyle Jeong",
+  publisher: "Kyle Jeong",
+  metadataBase: new URL('https://kylejeong.com'),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Kyle Jeong",
+    title: "Kyle Jeong",
+    description: "Engineer and builder. Working on browser infrastructure at Browserbase.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  }
 };
 
 export default function RootLayout({

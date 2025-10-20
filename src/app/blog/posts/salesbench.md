@@ -1,8 +1,10 @@
 ---
-
 title: "SalesBench: Testing Adaptive Social Intelligence in Extended Goal-Oriented Interactions"
 date: "2025-08-28"
-
+description: "Benchmarking AI agents in high-pressure sales scenarios - how well can Claude, GPT-4, and other models navigate cold calls, handle objections, and close deals?"
+keywords: ["AI agents", "LLM benchmarks", "sales AI", "social intelligence", "agent evaluation", "AI sales", "benchmarking", "hackathon project"]
+author: "Kyle Jeong"
+ogImage: "/blog/sales/leaderboard.png"
 ---
 
 This was a hackathon project I build during the summer of 25. 

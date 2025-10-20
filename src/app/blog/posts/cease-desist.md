@@ -1,8 +1,10 @@
 ---
-
 title: "UCLA sent me a cease and desist"
 date: "2025-01-15"
-
+description: "How I built and launched a wildfire tracking site during the LA fires in 3 hours, scaled to 40k users, and dealt with UCLA's legal team - a story about just shipping it."
+keywords: ["wildfire tracker", "UCLA", "LA fires", "rapid prototyping", "Next.js", "crisis response", "side project", "cease and desist"]
+author: "Kyle Jeong"
+ogImage: "/blog/fires/reddit1.png"
 ---
 
 The LA wildfires in early 2025 were a tragedy. People were losing the houses they grew up in, and rampant wildfires took over the news. For me, I'd just started winter quarter at UCLA, which was already super hectic. Early morning classes, trying to catch up with friends, and I was trying to get VEST (my startup club) off the ground. 

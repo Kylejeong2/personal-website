@@ -1,8 +1,9 @@
 ---
-
 title: "Why the city you live in determines the rest of your life"
 date: "2025-09-22"
-
+description: "Why moving to the right city in your 20s is more important than saving rent money - how location shapes your career, relationships, and ambitions."
+keywords: ["career advice", "San Francisco", "NYC", "LA", "life decisions", "moving cities", "ambition", "career growth"]
+author: "Kyle Jeong"
 ---
 
 A Sallie Mae study showed that <a href="https://www.realtor.com/advice/buy/more-men-recent-college-grads-live-with-parents/" target="_blank">64% percent</a> of students who left school in the last 2 years return to their parent’s home after college. Personal finance gurus will tell you how smart this is, and how they wish they’d have stayed home to save money. Here’s why they’re wrong and why the city you choose to live in literally shapes the course of your life (arguably more than your college). 

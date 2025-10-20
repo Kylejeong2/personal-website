@@ -1,7 +1,9 @@
 ---
-
 title: "Running a good community is REALLY hard."
 date: "2025-03-19"
+description: "Lessons learned from building a startup and builder community at UCLA - mistakes made, how to vet members, and why firing fast matters for community health."
+keywords: ["community building", "startup community", "UCLA", "VEST", "leadership", "management", "college clubs", "entrepreneurship", "student organizations"]
+author: "Kyle Jeong"
 ---
 
 ### Some reflections on building the builder/startup community at UCLA, a predominantly consulting and big tech focused school.
