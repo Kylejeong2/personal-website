@@ -38,3 +38,5 @@ With a company, I'm a big believer in work trials. You can't really expect to kn
 <br/>
 
 overall running VEST has been a super cool experience that I think is teaching me a lot + will continue to teach me even more about managing people and being a better leader.
+
+-> Kyle

@@ -40,3 +40,5 @@ Absolutely, the Uber credits alone made this worth my time. Making good friends 
 You also get the network of other past KP fellows, which honestly isn't super helpful other than knowing the ones that actually start cool companies like the [Pylon Founders](https://www.linkedin.com/posts/robert-eng/) or [Dylan Field](https://www.linkedin.com/in/dylanfield/) who just took Figma public.
 
 If you want a referral, feel free to email me. I'm happy to refer anyone who I believe will do great things in the future.
+
+-> Kyle

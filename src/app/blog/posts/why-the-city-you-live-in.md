@@ -39,3 +39,5 @@ There’s a famous <a href="https://mandarinmorning.org/News/2020/1027/10939.htm
 Seeing the Han army trapped against the river, the Zhao army laughed and attacked confidently. However, with their backs literally against the wall, the Han soldiers fought with the ferocity of men with nothing to lose. When the Zhao army turned to retreat, they were met with a surprise attack from a smaller Han force that had captured their main camp. The panicking Zhao army was then crushed between the two Han forces. 
 
 Think about moving to a new and bigger city putting a river behind you, removing the possibility of retreat and giving you no choice but to fight until the end until you succeed. That is how you should think about the city you decide to live in. Put yourself into uncomfortable situations, shoot higher, live ambitiously, and if you can, move out of your parents home as soon as possible. 
+
+-> Kyle

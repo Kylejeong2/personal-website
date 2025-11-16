@@ -142,7 +142,7 @@ export default function Home() {
         <li className="project-item active" data-filter-item>
           <a href="https://github.com/browserbase/stagehand" target="_blank">
             <h3 className="project-title">Stagehand</h3>
-            <p className="project-category">Automate the web with natural language, 15k Github Stars</p>
+            <p className="project-category">Automate the web with natural language, 19k Github Stars</p>
           </a>
         </li>
 
@@ -172,7 +172,7 @@ export default function Home() {
       <ul>
         <li>• Built a <a href="https://westwoodfires.org/" target="_blank" rel="noopener noreferrer">website</a> to track the LA wildfires, 40k users in a day</li>
         <li>• Wrestled NCAA D2 my freshman year of <a href="https://sfstategators.com/sports/wrestling/roster/kyle-jeong/5144" target="_blank" rel="noopener noreferrer">college</a></li>
-        <li>• Founded the builder community at UCLA via <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">VEST</a> (100+ members)</li>
+        <li>• Founded the builder community at UCLA via <a href="https://vestucla.com" target="_blank" rel="noopener noreferrer">VEST</a></li>
       </ul>
 
       <hr />
@@ -191,6 +191,8 @@ export default function Home() {
       <ul>
         <li>• <a href="https://a16z.com/market-annealing-getting-to-10m-arr-in-very-early-markets/" target="_blank" rel="noopener noreferrer">Market Annealing</a></li>
         <li>• <a href="https://alexw.substack.com/p/hire" target="_blank" rel="noopener noreferrer">Hiring</a></li>
+        <li>• <a href="https://www.writingclasses.com/toolbox/tips-masters/george-orwell-6-questions-6-rules" target="_blank" rel="noopener noreferrer">Orwell's 6 Questions &amp; Rules of Writing</a></li>
+        <li>• <a href="https://www.robin-guo.com/p/life-is-poker-not-chess" target="_blank" rel="noopener noreferrer">Life is Poker, Not Chess</a></li>
       </ul>
 
       <hr />
