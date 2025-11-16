@@ -191,7 +191,7 @@ export default function Home() {
       <ul>
         <li>• <a href="https://a16z.com/market-annealing-getting-to-10m-arr-in-very-early-markets/" target="_blank" rel="noopener noreferrer">Market Annealing</a></li>
         <li>• <a href="https://alexw.substack.com/p/hire" target="_blank" rel="noopener noreferrer">Hiring</a></li>
-        <li>• <a href="https://www.writingclasses.com/toolbox/tips-masters/george-orwell-6-questions-6-rules" target="_blank" rel="noopener noreferrer">Orwell's 6 Questions &amp; Rules of Writing</a></li>
+        <li>• <a href="https://www.writingclasses.com/toolbox/tips-masters/george-orwell-6-questions-6-rules" target="_blank" rel="noopener noreferrer">Orwell&apos;s 6 Questions &amp; Rules of Writing</a></li>
         <li>• <a href="https://www.robin-guo.com/p/life-is-poker-not-chess" target="_blank" rel="noopener noreferrer">Life is Poker, Not Chess</a></li>
       </ul>
 
